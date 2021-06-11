@@ -1,0 +1,45 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+export PS1="[\u@\h:\w]>"
+
+# specL
+
+export GOOGLEMOCK_DIR=/home/cssa/src/googletest-master/googlemock
+export DEV=/vobs/CLIP_Code
+export CLIP_TOP=$DEV
+export DEV_CONFIG={$DEV}/Config/imakeConfig
+export TOOLS_TOP=/opt/tools
+export SPECL_SRC_TOP={$DEV}/src/Rules/Specl
+export SPECL_PROJECT_TOP={$DEV}/tools/Specl
+export SPECL_L16_TRANSACTION_MGR={$DEV}/src/LinksCommsModel/LinksPkg/LnkL16Pkg/LnkL16TransactionMgrPkg
+export SPECL_JRE_TRANSACTION_MGR={$DEV}/src/LinksCommsModel/LinksPkg/LnkJrePkg/LnkJreTransactionMgrPkg
+export JAVACC_HOME=${TOOLS_TOP}/javacc-4.0
+
+# This is the RHEL 5.5 ISO version of the JDK.
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0
+export JDK_HOME=${JAVA_HOME}
+export ANT_HOME=${TOOLS_TOP}/apache-ant-1.6.5
+export MAVEN_HOME=${TOOLS_TOP}/apache-maven-2.0.8
+export PYTHON_HOME=/usr/include/python2.4
+
+export QTDIR=/opt/qt
+
+# Use Symbolic link to RTI's NDDS.
+export NDDSHOME=/opt/ndds
+PATH=${PATH}:${JAVACC_HOME}/bin:${ANT_HOME}/bin:${JAVA_HOME}/bin:${QTDIR}/bin:${NDDSHOME}/scripts:${MAVEN_HOME}/bin:${TOOLS_TOP}/xmlbeans-2.2.0/bin:/usr/local/imatix/bin:/usr/bin
+export MANPATH=${MANPATH}:${QTDIR}/doc/man
+export LD_LIBRARY_PATH=${QTDIR}/lib:${NDDSHOME}/lib/i86Linux2.6gcc3.4.3:/lib:/usr/local/lib:/usr/lib
+export PATH
+alias jmake='imake -I${DEV_CONFIG} -s GNUmakefile'
+export QT_PRIVATE_HEADERS=${QTDIR}/include
