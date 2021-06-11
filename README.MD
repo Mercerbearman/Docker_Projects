@@ -20,7 +20,7 @@ This allows us to log in and poke around the file system to see what the state o
 
 ```sh
 docker run -it centos_dev:5.11
-``` 
+```
 
 ## Run clip  
 
